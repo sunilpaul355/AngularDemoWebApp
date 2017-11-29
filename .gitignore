@@ -3,3 +3,5 @@
 ################################################################################
 
 /AngularDemoWebApp/AngularDemoWebApp/obj/Debug
+/AngularDemoWebApp/AngularDemoWebApp/bin
+/AngularDemoWebApp/.vs/AngularDemoWebApp/v15/Server/sqlite3
