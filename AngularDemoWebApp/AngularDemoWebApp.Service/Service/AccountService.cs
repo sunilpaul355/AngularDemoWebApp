@@ -33,8 +33,8 @@ namespace AngularDemoWebApp.Service.Service
                     FirstName=m.FirstName,
                     LastName=m.LastName,
                     Gender=m.Gender,
-                    Email=m.Email
-
+                    Email=m.Email,
+                    MobileNumber=m.MobileNumber
                 }).ToList();
                 return users;
             }
@@ -54,6 +54,7 @@ namespace AngularDemoWebApp.Service.Service
                 userModel.LastName = user.LastName;
                 userModel.Gender = user.Gender;
                 userModel.Email = user.Email;
+                userModel.MobileNumber = user.MobileNumber;
                 return userModel;
             }
             catch (Exception ex)
@@ -71,6 +72,18 @@ namespace AngularDemoWebApp.Service.Service
                 user.LastName = userModel.LastName;
                 user.Gender = userModel.Gender;
                 user.Email = userModel.Email;
+                user.Password = userModel.Password;
+                user.MobileNumber = userModel.MobileNumber;
+                if (userModel.UserId <= 0)
+                {
+                    user.DateCreated = DateTime.Now;
+                    user.CreatedBy = 1;
+                }
+                else
+                {
+                    user.DateUpdated = DateTime.Now;
+                    user.UpdatedBy = 1;
+                }
                 accountRepository.AddUser(user);
             }
             catch (Exception ex)

@@ -25,7 +25,8 @@ namespace AngularDemoWebApp.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            return View();
+            List<UserModel> userModel = accountService.GetUsers();
+            return View(userModel);
         }
 
 
@@ -34,6 +35,7 @@ namespace AngularDemoWebApp.Controllers
         {
             try
             {
+               
                 return View();
             }
             catch (Exception ex)
@@ -50,7 +52,7 @@ namespace AngularDemoWebApp.Controllers
             try
             {
                 accountService.AddUser(userModel);
-                return View();
+                return RedirectToAction("Index");
             }
             catch (Exception ex)
             {

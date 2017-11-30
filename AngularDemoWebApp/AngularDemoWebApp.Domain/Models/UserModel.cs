@@ -10,6 +10,8 @@ namespace AngularDemoWebApp.Domain.Models
     {
         #region PUBLIC PROPERTY
 
+        public int UserId { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
